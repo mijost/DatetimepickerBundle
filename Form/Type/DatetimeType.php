@@ -46,7 +46,7 @@ class DatetimeType extends AbstractType
     *
     * @param array $options
     */
-    public function __construct(array $options)
+    public function __construct(array $options = array())
     {
         $this->options = $options;
 
@@ -160,6 +160,11 @@ class DatetimeType extends AbstractType
     public function getParent()
     {
         return \Symfony\Component\Form\Extension\Core\Type\DateTimeType::class;
+    }
+    
+    public function getName()
+    {
+        return $this->getBlockPrefix();
     }
 
     public function getBlockPrefix()
